@@ -1,0 +1,29 @@
+name: 'Build application'
+on: [push]
+    
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '7.0.x' ]
+        runtime: [ 'win-x64', 'linux-x64' ]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
+    - name: Publish ${{ matrix.runtime }}
+      run: dotnet publish -c Release -r ${{ matrix.runtime }} -p:PublishSingleFile=true --no-self-contained
+    - name: Upload build result 
+      uses: actions/upload-artifact@v3
+      with:
+        name: bin-${{ matrix.runtime }}
+        path: bin/Release/net7.0/${{ matrix.runtime }}/publish

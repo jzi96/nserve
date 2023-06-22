@@ -4,8 +4,8 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<PublishReadyToRun>true</PublishReadyToRun>
-		<PublishReadyToRunEmitSymbols>true</PublishReadyToRunEmitSymbols>
+		<PublishReadyToRun>false</PublishReadyToRun>
+		<PublishReadyToRunEmitSymbols>false</PublishReadyToRunEmitSymbols>
 		<TieredCompilation>true</TieredCompilation>
 		<PublishReadyToRunComposite>true</PublishReadyToRunComposite>
 		<SelfContained>true</SelfContained>
