@@ -1,0 +1,33 @@
+{
+  "profiles": {
+    "serve": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\jzieschang\\OneDrive\\dev\\rust\\snake-wasm -sp 443",
+      "launchBrowser": false,
+      "launchUrl": "/",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        //"ASPNETCORE_URLS": "https://*:443;http://*:5014"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:5000;http://localhost:50001"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:24616",
+      "sslPort": 44340
+    }
+  }
+}
