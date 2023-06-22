@@ -1,2 +1,2 @@
-# nserve
-A small static webserver for some testing
+dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true --no-self-contained
+dotnet publish -c Release -r linux-x64 -p:PublishSingleFile=true --no-self-contained
